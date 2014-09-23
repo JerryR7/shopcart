@@ -90,10 +90,10 @@
             <span class="st_twitter_hcount"></span>
             <span class="st_pinterest_hcount"></span>
         </div>
-
+        <input type="hidden" id="product_id" class="product_id" value="2" />
         <div class="buttons-holder">
-            <a class="btn-add-to-wishlist" href="#">加入 喜歡清單</a>
-            <a class="btn-add-to-compare" href="#">加入 比較清單</a>
+            <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入 喜歡清單</a>
+            <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入 比較清單</a>
         </div>
 
         <div class="excerpt">
@@ -109,11 +109,11 @@
             <div class="le-quantity">
                 <form>
                     <a class="minus" href="#reduce"></a>
-                    <input name="quantity" readonly="readonly" type="text" value="1" />
+                    <input id="qty" name="quantity" readonly="readonly" type="text" value="1" />
                     <a class="plus" href="#add"></a>
                 </form>
             </div>
-            <a id="addto-cart" href="cart.html" class="le-button huge">加入購物車</a>
+            <a id="addto-cart" href="javascript:undefined" class="le-button huge add_cart">加入購物車</a>
         </div><!-- /.qnt-holder -->
     </div><!-- /.body -->
 
@@ -313,35 +313,35 @@
                     <div class="add-review row">
                         <div class="col-sm-8 col-xs-12">
                             <div class="new-review-form">
-                                <h2>Add review</h2>
-                                <form id="contact-form" class="contact-form" method="post" >
+                                <h2>評　論</h2>
+                                <?php echo form_open('shopcart/product',array('id'=>'contact-form','class'=>'contact-form'));?>
                                     <div class="row field-row">
                                         <div class="col-xs-12 col-sm-6">
-                                            <label>name*</label>
-                                            <input class="le-input" >
+                                            <label>姓　名*</label>
+                                            <input name="name" class="le-input" >
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
-                                            <label>email*</label>
-                                            <input class="le-input" >
+                                            <label>Email*</label>
+                                            <input name="email" class="le-input" >
                                         </div>
                                     </div><!-- /.field-row -->
 
                                     <div class="field-row star-row">
-                                        <label>your rating</label>
+                                        <label>評　價</label>
                                         <div class="star-holder">
-                                            <div class="star big" data-score="0"></div>
+                                            <div name="star_commit" class="star big" data-score="0"></div>
                                         </div>
                                     </div><!-- /.field-row -->
 
                                     <div class="field-row">
-                                        <label>your review</label>
-                                        <textarea rows="8" class="le-input"></textarea>
+                                        <label>評　論</label>
+                                        <textarea name="description" rows="8" class="le-input"></textarea>
                                     </div><!-- /.field-row -->
 
                                     <div class="buttons-holder">
-                                        <button type="submit" class="le-button huge">submit</button>
+                                        <button type="submit" class="le-button huge">送　出</button>
                                     </div><!-- /.buttons-holder -->
-                                </form><!-- /.contact-form -->
+                                <?php echo form_close();?>
                             </div><!-- /.new-review-form -->
                         </div><!-- /.col -->
                     </div><!-- /.add-review -->

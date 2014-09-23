@@ -25,12 +25,12 @@
         <!-- Demo Purpose Only. Should be removed in production -->
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/config.css">
 
-        <!-- <link href="<?php echo base_url();?>assets/css/green.css" rel="alternate stylesheet" title="Green color">
+        <link href="<?php echo base_url();?>assets/css/green.css" rel="alternate stylesheet" title="Green color">
         <link href="<?php echo base_url();?>assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
         <link href="<?php echo base_url();?>assets/css/red.css" rel="alternate stylesheet" title="Red color">
         <link href="<?php echo base_url();?>assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
         <link href="<?php echo base_url();?>assets/css/navy.css" rel="alternate stylesheet" title="Navy color">
-        <link href="<?php echo base_url();?>assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color"> -->
+        <link href="<?php echo base_url();?>assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
         <!-- Demo Purpose Only. Should be removed in production : END -->
 
         <!-- Fonts -->
@@ -51,11 +51,15 @@
         <script>
         $(document).ready(function(){
             $(document).on('click', 'a.add_cart', function(event){
-                var product_id = $(this).parent().siblings('input#product_id').val();
+                var product_id = $(this).parents().siblings('input#product_id').val();
+                alert(product_id);
                 $.ajax({
                     type : 'POST',
                     url : '<?php echo site_url("shopcart/add_cart");?>',
                     data : {
+                        <?php if($this->uri->segment(2) == 'product'):?>
+                        qty : $('#qty').val(),
+                        <?php endif;?>
                         product_id : product_id
                     },
                     success : function(data){
@@ -66,6 +70,7 @@
             });
             $(document).on('click', 'a.add_favor', function(event){
                 var product_id = $(this).parent().siblings('input#product_id').val();
+                alert(product_id);
                 $.ajax({
                     type : 'POST',
                     url : '<?php echo site_url("shopcart/add_favor");?>',
@@ -80,6 +85,7 @@
             });
             $(document).on('click', 'a.add_compare', function(event){
                 var product_id = $(this).parent().siblings('input#product_id').val();
+                alert(product_id);
                 $.ajax({
                     type : 'POST',
                     url : '<?php echo site_url("shopcart/add_compare");?>',
@@ -113,7 +119,7 @@
             })
         })
         </script>
-
+        <?php if($this->uri->segment(2) == 'index' || $this->uri->segment(2) == ''):?>
         <script type="text/javascript">
         $(document).ready(function(){
         var track_click_feature = 0;
@@ -164,8 +170,6 @@
             }
           }
         });
-
-
 
         $('#results_new').load("<?php echo site_url('shopcart/fetch_pages');?>",
           {
@@ -260,6 +264,7 @@
         });
       });
       </script>
+      <?php endif;?>
     </head>
 <body>
 
@@ -281,7 +286,9 @@
     <script src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery-migrate-1.2.1.js"></script>
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=zh-TW"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.tinyMap.js"></script>
+
     <script src="<?php echo base_url();?>assets/js/gmap3.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/bootstrap-hover-dropdown.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
@@ -294,7 +301,10 @@
     <script src="<?php echo base_url();?>assets/js/jquery.customSelect.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/wow.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
-
+    <script type="text/javascript">
+      base_url = '<?php echo base_url();?>';
+      address = '台北市信義區市府路1號';
+    </script>
     <!-- For demo purposes – can be removed on production -->
 
     <script src="<?php echo base_url();?>switchstylesheet/switchstylesheet.js"></script>

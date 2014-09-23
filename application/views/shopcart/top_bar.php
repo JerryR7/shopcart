@@ -2,68 +2,28 @@
     <div class="container">
         <div class="col-xs-12 col-sm-6 no-margin">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><?php echo anchor('','首頁');?></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-colors">Change Colors</a>
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-colors">主題顏色</a>
 
                     <ul class="dropdown-menu" role="menu" >
-                        <li role="presentation"><a role="menuitem" class="changecolor green-text" tabindex="-1" href="#" title="Green color">Green</a></li>
-                        <li role="presentation"><a role="menuitem" class="changecolor blue-text" tabindex="-1" href="#" title="Blue color">Blue</a></li>
-                        <li role="presentation"><a role="menuitem" class="changecolor red-text" tabindex="-1" href="#" title="Red color">Red</a></li>
-                        <li role="presentation"><a role="menuitem" class="changecolor orange-text" tabindex="-1" href="#" title="Orange color">Orange</a></li>
-                        <li role="presentation"><a role="menuitem" class="changecolor navy-text" tabindex="-1" href="#" title="Navy color">Navy</a></li>
-                        <li role="presentation"><a role="menuitem" class="changecolor dark-green-text" tabindex="-1" href="#" title="Darkgreen color">Dark Green</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor green-text" tabindex="-1" href="#" title="Green color">綠色</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor blue-text" tabindex="-1" href="#" title="Blue color">藍色</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor red-text" tabindex="-1" href="#" title="Red color">紅色</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor orange-text" tabindex="-1" href="#" title="Orange color">橘色</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor navy-text" tabindex="-1" href="#" title="Navy color">深藍色</a></li>
+                        <li role="presentation"><a role="menuitem" class="changecolor dark-green-text" tabindex="-1" href="#" title="Darkgreen color">深綠色</a></li>
                     </ul>
                 </li>
-                <li><a href="index.php?page=blog">Blog</a></li>
-                <li><a href="index.php?page=faq">FAQ</a></li>
-                <li><a href="index.php?page=contact">Contact</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#pages">Pages</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index-2.html">Home Alt</a></li>
-                        <li><a href="category-grid.html">Category - Grid/List</a></li>
-                        <li><a href="category-grid-2.html">Category 2 - Grid/List</a></li>
-                        <li><a href="single-product.html">Single Product</a></li>
-                        <li><a href="single-product-sidebar.html">Single Product with Sidebar</a></li>
-                        <li><a href="cart.html">Shopping Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-fullwidth.html">Blog Full Width</a></li>
-                        <li><a href="blog-post.html">Blog Post</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="authentication.html">Login/Register</a></li><li><a href="http://www.weidea.net">More</a></li>
-                    </ul>
-                </li>
+                <li><?php echo anchor('shopcart/faq','常見問題');?></li>
+                <li><?php echo anchor('shopcart/contact','聯絡我們');?></li>
             </ul>
         </div><!-- /.col -->
 
         <div class="col-xs-12 col-sm-6 no-margin">
             <ul class="right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-language">English</a>
-                    <ul class="dropdown-menu" role="menu" >
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turkish</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tamil</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">French</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Russian</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-currency">Dollar (US)</a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Euro (EU)</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Turkish Lira (TL)</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indian Rupee (INR)</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dollar (US)</a></li>
-                    </ul>
-                </li>
-                <li><a href="authentication">Register</a></li>
-                <li><a href="authentication">Login</a></li>
+                <li><?php echo anchor('shopcart/auth','註冊會員');?></li>
+                <li><?php echo anchor('shopcart/auth','登入');?></li>
             </ul>
         </div><!-- /.col -->
     </div><!-- /.container -->

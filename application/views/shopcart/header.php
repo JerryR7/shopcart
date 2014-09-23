@@ -43,26 +43,10 @@
     </div><!-- /.contact-row -->
 <!-- ============================================================= SEARCH AREA ============================================================= -->
 <div class="search-area">
-    <?php echo form_open('');?>
+    <?php echo form_open('shopcart/search',array('id'=>'search'));?>
         <div class="control-group">
-            <input class="search-field" placeholder="搜尋商品" />
-
-            <ul class="categories-filter animate-dropdown">
-                <li class="dropdown">
-
-                    <a class="dropdown-toggle"  data-toggle="dropdown" href="category-grid.html">請選擇分類</a>
-
-                    <ul class="dropdown-menu" role="menu" >
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">laptops</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">tv & audio</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">gadgets</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">cameras</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-            <a class="search-button" href="#" ></a>
-
+            <input name="search" class="search-field" placeholder="搜尋商品" />
+            <a class="search-button" href="#" onclick="$('#search').submit()"></a>
         </div>
     <?php echo form_close();?>
 </div><!-- /.search-area -->
@@ -100,7 +84,7 @@
 
             <ul class="dropdown-menu">
                 <?php if($this->cart->total_articles() > 0):?>
-                    <?php foreach($cart as $cart):?>
+                    <?php foreach($this->cart->get_content() as $cart):?>
                     <li>
                         <div class="basket-item">
                             <div class="row">
@@ -119,6 +103,22 @@
                         </div>
                     </li>
                     <?php endforeach;?>
+                <?php else: ?>
+                    <li>
+                        <div class="basket-item">
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 no-margin text-center">
+                                    <div class="basket-item-count">
+                                        <span class="count"><?php echo $this->cart->total_articles();?></span>
+                                        <img src="<?php echo base_url();?>assets/images/icon-cart.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 no-margin">
+                                    <h4>您還沒有選購商品。</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 <?php endif;?>
                 <li class="checkout">
                     <div class="basket-item">
@@ -155,17 +155,21 @@
             <div class="collapse navbar-collapse" id="mc-horizontal-menu-collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Computers</a>
+                        <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">3C商品</a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                            <li><a href="#">CPUs, Processors</a></li>
-                            <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                            <li><a href="#">Graphics, Video Cards</a></li>
-                            <li><a href="#">Interface, Add-On Cards</a></li>
-                            <li><a href="#">Laptop Replacement Parts</a></li>
-                            <li><a href="#">Memory (RAM)</a></li>
-                            <li><a href="#">Motherboards</a></li>
-                            <li><a href="#">Motherboard &amp; CPU Combos</a></li>
+                            <?php
+                            $array = array(
+                                'Computer Cases &amp; Accessories',
+                                'CPUs, Processors',
+                                'Fans, Heatsinks &amp; Cooling',
+                                'Graphics, Video Cards',
+                                'Interface, Add-On Cards',
+                                'Laptop Replacement Parts'
+                            );
+                            ?>
+                            <?php foreach($array as $array):?>
+                                <li><?php echo anchor('shopcart/category',$array);?></li>
+                            <?php endforeach;?>
                         </ul>
                     </li>
                 </ul><!-- /.navbar-nav -->

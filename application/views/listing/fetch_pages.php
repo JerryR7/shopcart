@@ -7,7 +7,7 @@
         <div class="body">
             <div class="label-discount green">-50% 優惠</div>
             <div class="title">
-                <a href="javascript:undefined">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
+                <?php echo anchor('shopcart/product/9','VAIO Fit Laptop - Windows 8 SVF14322CXW');?>
             </div>
             <div class="brand">sony</div>
         </div>

@@ -7,5 +7,6 @@
     'smtp_port' => '465',
     'smtp_timeout' => 5,
     'validate' => TRUE,
+    'charset' => 'utf-8',
   );
 ?>

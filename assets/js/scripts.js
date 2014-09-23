@@ -252,8 +252,8 @@
 
                     if($star.hasClass('big')){
                         $star.raty({
-                            starOff: '../assets/images/star-big-off.png',
-                            starOn: '../assets/images/star-big-on.png',
+                            starOff: base_url + '/assets/images/star-big-off.png',
+                            starOn: base_url + '/assets/images/star-big-on.png',
                             space: false,
                             score: function() {
                                 return $(this).attr('data-score');
@@ -261,8 +261,8 @@
                         });
                     }else{
                      $star.raty({
-                        starOff: '../assets/images/star-off.png',
-                        starOn: '../assets/images/star-on.png',
+                        starOff: base_url + '/assets/images/star-off.png',
+                        starOn: base_url + '/assets/images/star-on.png',
                         space: false,
                         score: function() {
                             return $(this).attr('data-score');
@@ -325,12 +325,11 @@
         // Price Slider
         if ($('.price-slider').length > 0) {
             $('.price-slider').slider({
-                min: 100,
-                max: 700,
+                min: 1000,
+                max: 7000,
                 step: 10,
-                value: [100, 400],
+                value: [1000, 4000],
                 handle: "square"
-
             });
         }
 
@@ -398,11 +397,26 @@
 
     $(document).ready(function(){
         var zoom = 16;
-        var latitude = 51.539075;
-        var longitude = -0.152424;
+        var latitude;
+        var longitude;
         var mapIsNotActive = true;
-        setupCustomMap();
-
+        //setupCustomMap();
+        function getLocation(addr)
+        {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                'address' : addr
+            },function(result, status){
+                if(status == google.maps.GeocoderStatus.OK) {
+                    latitude = result[0].geometry.location.lat();
+                    longitude = result[0].geometry.location.lng();
+                    setupCustomMap();
+                } else {
+                    //查無經緯度
+                }
+            });
+        }
+        getLocation(address);
         function setupCustomMap() {
             if ($('.map-holder').length > 0 && mapIsNotActive) {
 

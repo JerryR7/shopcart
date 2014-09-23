@@ -4,7 +4,7 @@
         <div id="cart_checkout" class="col-xs-12 col-md-9 items-holder no-margin">
             <?php if($this->cart->total_articles() > 0):?>
             <?php echo form_open('shopcart/cart_update');?>
-                <?php foreach($cart as $cart):?>
+                <?php foreach($this->cart->get_content() as $cart):?>
                 <div class="row no-margin cart-item">
                     <div class="col-xs-12 col-sm-2 no-margin">
                         <?php echo anchor('shopcart/product/' . $cart['id'],'<img class="lazy" alt="" src="http://placehold.it/73x73" />',array('class'=>'thumb-holder'));?>

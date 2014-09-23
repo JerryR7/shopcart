@@ -13,7 +13,7 @@
 </a>
 <ul class="dropdown-menu">
     <?php if($this->cart->total_articles() > 0):?>
-        <?php foreach($cart as $cart):?>
+        <?php foreach($this->cart->get_content() as $cart):?>
         <li>
             <div class="basket-item">
                 <div class="row">
@@ -32,6 +32,22 @@
             </div>
         </li>
         <?php endforeach;?>
+    <?php else: ?>
+        <li>
+            <div class="basket-item">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 no-margin text-center">
+                        <div class="basket-item-count">
+                            <span class="count"><?php echo $this->cart->total_articles();?></span>
+                            <img src="<?php echo base_url();?>assets/images/icon-cart.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 no-margin">
+                        <h4>您還沒有選購商品。</h4>
+                    </div>
+                </div>
+            </div>
+        </li>
     <?php endif;?>
     <li class="checkout">
         <div class="basket-item">

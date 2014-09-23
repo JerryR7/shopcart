@@ -28,8 +28,8 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist  add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>
@@ -56,8 +56,8 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist  add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="wish-compare">
                                     <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>
@@ -115,8 +115,8 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist  add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +143,8 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist  add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>
@@ -171,8 +171,8 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist  add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                    <a class="btn-add-to-compare  add_compare" href="javascript:undefined">加入比較</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                 </div>
                             </div>
                         </div>

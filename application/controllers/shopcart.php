@@ -45,39 +45,13 @@ class Shopcart extends CI_Controller {
       }while(true);
   }
 
-  public function test()
-  {
-    $this->shop1 = new Udp_cart('shop1');
-    $this->shop2 = new Udp_cart('shop2');
-
-    $article = array("id" => 1,"qty" => mt_rand(1,10),"name" => "shoes","price" => "10");
-    $article["options"] = array("color" => "black", "size" => "4");
-
-    $article2 = array("id" => 1,"qty" => mt_rand(1,2),"name" => "shoes","price" => "10");
-    $article2["options"] = array("color" => "black", "size" => "4");
-
-    $this->shop1->insert($article);
-    $this->shop2->insert($article2);
-
-    foreach($this->shop1->get_content() as $item)
-    {
-      echo "id : " . $item['id'] . "name : " . $item['name'] . " qty : " . $item['qty'] . "<br>";
-    }
-    echo "<hr> 2 <br>";
-    foreach($this->shop2->get_content() as $item)
-    {
-      echo "id : " . $item['id'] . "name : " . $item['name'] . " qty : " . $item['qty'] . "<br>";
-    }
-  }
-
   public function index()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'item_per_page' => 4,
       'total_pages' => 2,
       'view' => array(
-        'shopcart/header','shopcart/top_container'
+        'shopcart/top_bar','shopcart/header','shopcart/top_container'
       ),
       'contain_view' => array(
         'banner/home_banner','shopcart/product_tab','shopcart/bestsellers','shopcart/recently_review','shopcart/top_brands','shopcart/footer'
@@ -89,9 +63,8 @@ class Shopcart extends CI_Controller {
   public function category()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'view' => array(
-        'shopcart/header'
+        'shopcart/top_bar','shopcart/header'
       ),
       'contain_view' => array(
         'shopcart/category','shopcart/footer'
@@ -100,12 +73,24 @@ class Shopcart extends CI_Controller {
     $this->load->view('template',$data);
   }
 
-  public function pages($product_id = FALSE)
+  public function search()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'view' => array(
-        'shopcart/header'
+        'shopcart/top_bar','shopcart/header'
+      ),
+      'contain_view' => array(
+        'shopcart/category','shopcart/footer'
+      ),
+    );
+    $this->load->view('template',$data);
+  }
+
+  public function product($product_id = FALSE)
+  {
+    $data = array(
+      'view' => array(
+        'shopcart/top_bar','shopcart/header'
       ),
       'contain_view' => array(
         'shopcart/animate','shopcart/single_product','banner/home_banner','shopcart/recently_review','shopcart/footer'
@@ -114,12 +99,37 @@ class Shopcart extends CI_Controller {
     $this->load->view('template',$data);
   }
 
+  public function faq()
+  {
+    $data = array(
+      'view' => array(
+        'shopcart/top_bar','shopcart/header'
+      ),
+      'contain_view' => array(
+        'shopcart/animate','shopcart/faq','shopcart/footer'
+      ),
+    );
+    $this->load->view('template',$data);
+  }
+
+  public function contact()
+  {
+    $data = array(
+      'view' => array(
+        'shopcart/top_bar','shopcart/header'
+      ),
+      'contain_view' => array(
+        'shopcart/contact','shopcart/footer'
+      ),
+    );
+    $this->load->view('template',$data);
+  }
+
   public function cart()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'view' => array(
-        'shopcart/header'
+        'shopcart/top_bar','shopcart/header'
       ),
       'contain_view' => array(
         'cart/cart','shopcart/footer'
@@ -131,9 +141,8 @@ class Shopcart extends CI_Controller {
   public function auth()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'view' => array(
-        'shopcart/header'
+        'shopcart/top_bar','shopcart/header'
       ),
       'contain_view' => array(
         'shopcart/auth','shopcart/recently_review','shopcart/top_brands','shopcart/footer'
@@ -145,9 +154,8 @@ class Shopcart extends CI_Controller {
   public function checkout()
   {
     $data = array(
-      'cart' => $this->cart->get_content(),
       'view' => array(
-        'shopcart/header'
+        'shopcart/top_bar','shopcart/header'
       ),
       'contain_view' => array(
         'cart/checkout','shopcart/footer'
@@ -168,9 +176,14 @@ class Shopcart extends CI_Controller {
   public function add_cart()
   {
     $product_id = $this->input->post('product_id');
+    $qty = $this->input->post('qty');
     //$product = $this->shopcart_model->get_product($product_id)->result();
 
-    $cart = array("id" => rand(1,10),"qty" => mt_rand(1,10),"name" => "shoes","price" => "10");
+    if(empty($qty)) {
+      $qty = 1;
+    }
+
+    $cart = array("id" => rand(1,10),"qty" => $qty,"name" => "shoes","price" => "10");
     $this->cart->insert($cart);
 
     $data['cart'] = $this->cart->get_content();
@@ -212,9 +225,7 @@ class Shopcart extends CI_Controller {
 
         $this->cart->update($cart);
       }
-
     }
-
     redirect('shopcart/cart','refresh');
   }
 
@@ -239,9 +250,6 @@ class Shopcart extends CI_Controller {
 
     echo anchor('shopcart/compare','<i class="fa fa-exchange"></i>比較商品<span class="value">(' . $this->compare->total_articles() . ')</span>');
   }
-
-
-
 }
 
 /* End of file shopcart.php */

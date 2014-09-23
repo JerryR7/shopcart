@@ -46,6 +46,20 @@
     <?php echo form_open('shopcart/search',array('id'=>'search'));?>
         <div class="control-group">
             <input name="search" class="search-field" placeholder="搜尋商品" />
+            <ul class="categories-filter animate-dropdown">
+                <li class="dropdown">
+
+                    <a class="dropdown-toggle"  data-toggle="dropdown" href="category-grid.html">all categories</a>
+
+                    <ul class="dropdown-menu" role="menu" >
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">laptops</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">tv & audio</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">gadgets</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="category-grid.html">cameras</a></li>
+
+                    </ul>
+                </li>
+            </ul>
             <a class="search-button" href="#" onclick="$('#search').submit()"></a>
         </div>
     <?php echo form_close();?>

@@ -1,0 +1,10 @@
+node_modules
+.idea
+dist
+docs
+demo
+documentation
+production
+assets-minified
+assets-concat
+.npm-debug.log

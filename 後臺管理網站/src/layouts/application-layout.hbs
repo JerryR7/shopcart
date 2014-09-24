@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang ="en">
+<head> 
+
+    {{> head  }}
+
+{{#if production}}
+
+    {{> assets-css  }}
+
+{{else}}
+
+    {{> assets-css-development  }}
+
+{{/if}}
+
+<!-- Admin Theme -->
+
+<link rel="stylesheet" type="text/css" href="../assets/themes/supina/layout.css">
+<link id="layout-color" rel="stylesheet" type="text/css" href="../assets/themes/supina/default/layout-color.css">
+<link id="framework-color" rel="stylesheet" type="text/css" href="../assets/themes/supina/default/framework-color.css">
+<link rel="stylesheet" type="text/css" href="../assets/themes/supina/border-radius.css">
+
+<!-- Color Helpers CSS -->
+
+<link rel="stylesheet" type="text/css" href="../assets/helpers/colors.css">
+
+</head> 
+<body>
+    <div id="loading"><img src="../assets/images/spinner/loader-dark.gif" alt="Loading..."></div>
+
+        <div id="sb-site">
+
+            <div id="page-wrapper">
+
+                {{> common-header }}
+                {{> common-sidebar }}
+
+                <div id="page-content-wrapper" class="rm-transition">
+
+                    {{> page-nav }}
+
+                    {{> body  }}
+
+            </div><!-- #page-wrapper -->
+
+        </div><!-- #sb-site -->
+
+        {{> common-slidebars  }}
+
+{{#if production}}
+
+    {{> assets-js  }}
+
+{{else}}
+
+    {{> assets-js-development  }}
+
+{{/if}}
+    
+</body>
+</html>

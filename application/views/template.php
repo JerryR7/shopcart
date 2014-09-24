@@ -267,7 +267,6 @@
       <?php endif;?>
     </head>
 <body>
-
     <div class="wrapper">
         <?php
         foreach($view as $view):

@@ -1,0 +1,31 @@
+-----------------------------------
+
+	Supina - Supina Framework
+
+-----------------------------------
+
+Initial release: 1.0 - 10.08.2014
+
+-----------------------------------
+
+-----------------------------------
+
+Second release: 1.0.1 - 15.08.2014
+
+Additions:
+
+- Added #loading that shows until all page content is loaded
+- Switched fonts from Open Sans to Helvetica
+
+Fixes
+
+- Fixed a bug in Gruntfile.js regarding the copying of demo.css
+- Fixed a bug in morris-demo.js
+- Fixed a bug regarding sortables & nestables
+- Fixed missing link to plain-tables.html
+- Fixed a bug in mailbox-inbox.hbs and mailbox-inbox-alt.hbs, id="" was defined two times.
+- Fixed input-group margin inside button pane.
+- Fixed slidebars custom scrollbar error.
+- Removed xcharts-demo-2.js
+
+-----------------------------------

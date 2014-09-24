@@ -1,6 +1,5 @@
 <section id="cart-page">
     <div class="container">
-        <!-- ========================================= CONTENT ========================================= -->
         <div id="cart_checkout" class="col-xs-12 col-md-9 items-holder no-margin">
             <?php if($this->cart->total_articles() > 0):?>
             <?php echo form_open('shopcart/cart_update');?>
@@ -19,14 +18,13 @@
                     <div class="col-xs-12 col-sm-3 no-margin">
                         <div class="quantity">
                             <div class="le-quantity">
-
-                                    <a class="minus" href="#reduce"></a>
-                                    <input name="qty[]" readonly="readonly" type="text" value="<?php echo $cart['qty'];?>" />
-                                    <a class="plus" href="#add"></a>
-
+                                <a class="minus" href="#reduce"></a>
+                                <input name="qty[]" readonly="readonly" type="text" value="<?php echo $cart['qty'];?>" />
+                                <a class="plus" href="#add"></a>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-2 no-margin">
                         <div class="price">
                             $<?php echo $cart['price'];?>
@@ -47,10 +45,6 @@
             <?php echo form_close();?>
             <?php endif;?>
         </div>
-        <!-- ========================================= CONTENT : END ========================================= -->
-
-        <!-- ========================================= SIDEBAR ========================================= -->
-
         <div class="col-xs-12 col-md-3 no-margin sidebar ">
             <div class="widget cart-summary">
                 <h1 class="border">購物車</h1>
@@ -76,7 +70,7 @@
                         <?php echo anchor('','繼續購物',array('class'=>'simple-link block'));?>
                     </div>
                 </div>
-            </div><!-- /.widget -->
+            </div>
 
             <div id="cupon-widget" class="widget">
                 <h1 class="border">使用優惠券</h1>
@@ -88,9 +82,7 @@
                         </div>
                     </form>
                 </div>
-            </div><!-- /.widget -->
-        </div><!-- /.sidebar -->
-
-        <!-- ========================================= SIDEBAR : END ========================================= -->
+            </div>
+        </div>
     </div>
 </section>

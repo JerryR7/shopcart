@@ -267,63 +267,57 @@
       <?php endif;?>
     </head>
 <body>
-    <div class="wrapper">
-        <?php
-        foreach($view as $view):
-            $this->load->view($view);
-        endforeach;
-        ?>
-    </div>
-
+  <div class="wrapper">
     <?php
-    foreach($contain_view as $contain):
-        $this->load->view($contain);
-    endforeach;
+      foreach($view as $view):
+        $this->load->view($view);
+      endforeach;
     ?>
+  </div>
 
-    <!-- JavaScripts placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery-migrate-1.2.1.js"></script>
-    <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=zh-TW"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.tinyMap.js"></script>
+  <?php
+    foreach($contain_view as $contain):
+      $this->load->view($contain);
+    endforeach;
+  ?>
 
-    <script src="<?php echo base_url();?>assets/js/gmap3.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/bootstrap-hover-dropdown.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/css_browser_selector.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/echo.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/bootstrap-slider.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.raty.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.prettyPhoto.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.customSelect.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/wow.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
-    <script type="text/javascript">
-      base_url = '<?php echo base_url();?>';
-      address = '台北市信義區市府路1號';
-    </script>
-    <!-- For demo purposes – can be removed on production -->
+  <!-- JavaScripts placed at the end of the document so the pages load faster -->
+  <script src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery-migrate-1.2.1.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=zh-TW"></script>
+  <script src="<?php echo base_url();?>assets/js/gmap3.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrap-hover-dropdown.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/css_browser_selector.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/echo.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.easing-1.3.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrap-slider.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.raty.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.prettyPhoto.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.customSelect.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/wow.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
+  <script type="text/javascript">
+    base_url = '<?php echo base_url();?>';
+    address = '台北市信義區市府路1號';
+  </script>
+  <script src="<?php echo base_url();?>switchstylesheet/switchstylesheet.js"></script>
+  <script>
+  $(document).ready(function(){
+    $(".changecolor").switchstylesheet( { seperator:"color"} );
+    $('.show-theme-options').click(function(){
+      $(this).parent().toggleClass('open');
+      return false;
+    });
+  });
 
-    <script src="<?php echo base_url();?>switchstylesheet/switchstylesheet.js"></script>
+  $(window).bind("load", function() {
+    $('.show-theme-options').delay(1000).trigger('click');
+  });
+  </script>
 
-    <script>
-        $(document).ready(function(){
-            $(".changecolor").switchstylesheet( { seperator:"color"} );
-            $('.show-theme-options').click(function(){
-                $(this).parent().toggleClass('open');
-                return false;
-            });
-        });
-
-        $(window).bind("load", function() {
-           $('.show-theme-options').delay(2000).trigger('click');
-        });
-    </script>
-    <!-- For demo purposes – can be removed on production : End -->
-
-    <script src="http://w.sharethis.com/button/buttons.js"></script>
+  <script src="http://w.sharethis.com/button/buttons.js"></script>
 
 </body>
 </html>

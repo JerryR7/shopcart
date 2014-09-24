@@ -153,6 +153,7 @@ class Shopcart extends CI_Controller {
 
   public function checkout()
   {
+    print_r($_POST);
     $data = array(
       'view' => array(
         'shopcart/top_bar','shopcart/header'
@@ -164,6 +165,44 @@ class Shopcart extends CI_Controller {
     $this->load->view('template',$data);
   }
 
+  public function order_done()
+  {
+    $this->load->library('form_validation');
+
+    $this->form_validation->set_rules('buy_lastname', '購買人姓氏', 'trim|required');
+    $this->form_validation->set_rules('buy_firstname', '購買人名子', 'trim|required');
+    $this->form_validation->set_rules('buy_email', '購買人 Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('buy_contact', '購買人聯絡電話', 'trim|required|min_length[8]|max_length[10]|numeric');
+    $this->form_validation->set_rules('buy_company', '購買人公司', 'trim');
+    $this->form_validation->set_rules('buy_zip', '購買人區號', 'trim|required|min_length[3]|max_length[5]|numeric');
+    $this->form_validation->set_rules('buy_address', '購買人地址', 'trim|required');
+
+    $this->form_validation->set_rules('receive_lastname', '收件人姓氏', 'trim|required');
+    $this->form_validation->set_rules('receive_firstname', '收件人名子', 'trim|required');
+    $this->form_validation->set_rules('receive_email', '收件人 Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('receive_contact', '收件人聯絡電話', 'trim|required|min_length[8]|max_length[10]|numeric');
+    $this->form_validation->set_rules('receive_company', '收件人公司', 'trim');
+    $this->form_validation->set_rules('receive_zip', '收件人區號', 'trim|required|min_length[3]|max_length[5]|numeric');
+    $this->form_validation->set_rules('receive_address', '收件人地址', 'trim|required');
+
+    $this->form_validation->set_error_delimiters('<span class="btn-danger">', '</span>');
+    $this->form_validation->set_message('required', '請輸入 %s ');
+    if ($this->form_validation->run() == FALSE) {
+      $data = array(
+        'view' => array(
+          'shopcart/top_bar','shopcart/header'
+        ),
+        'contain_view' => array(
+          'cart/order_done','shopcart/footer'
+        ),
+      );
+      $this->load->view('template',$data);
+    }
+    else {
+
+    }
+  }
+
   public function fetch_pages()
   {
     for($i=0;$i<4;$i++)
@@ -171,7 +210,6 @@ class Shopcart extends CI_Controller {
       $this->load->view('listing/fetch_pages');
     }
   }
-
 
   public function add_cart()
   {
@@ -183,11 +221,23 @@ class Shopcart extends CI_Controller {
       $qty = 1;
     }
 
-    $cart = array("id" => rand(1,10),"qty" => $qty,"name" => "shoes","price" => "10");
-    $this->cart->insert($cart);
-
-    $data['cart'] = $this->cart->get_content();
-    $this->load->view('listing/top_cart',$data);
+    $cart = $this->cart->get_content();
+    if(!empty($cart)) {
+      foreach($cart as $cart) {
+        if($cart['id'] != $product_id) {
+          $cart = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+          $this->cart->insert($cart);
+          break;
+        }
+        else {
+        }
+      }
+    }
+    else {
+      $cart = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+      $this->cart->insert($cart);
+    }
+    $this->load->view('listing/top_cart');
   }
 
   public function destroy_cart()

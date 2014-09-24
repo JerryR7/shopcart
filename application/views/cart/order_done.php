@@ -7,37 +7,37 @@
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-6">
                             <label>姓氏* <?php echo form_error('buy_lastname'); ?></label>
-                            <input type="name" name="buy_lastname" class="le-input" >
+                            <input type="name" name="buy_lastname" class="le-input" value="<?php echo set_value('buy_lastname'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <label>名子* <?php echo form_error('buy_firstname'); ?></label>
-                            <input type="name" name="buy_firstname" class="le-input" >
+                            <input type="name" name="buy_firstname" class="le-input" value="<?php echo set_value('buy_firstname'); ?>" >
                         </div>
                     </div>
 
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-4">
                             <label>Email 信箱* <?php echo form_error('buy_email'); ?></label>
-                            <input type="email" name="buy_email" class="le-input" >
+                            <input type="email" name="buy_email" class="le-input" value="<?php echo set_value('buy_email'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <label>聯絡電話* <?php echo form_error('buy_contact'); ?></label>
-                            <input type="text" name="buy_contact" class="le-input" >
+                            <input type="text" name="buy_contact" class="le-input" value="<?php echo set_value('buy_contact'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <label>公司名稱 <?php echo form_error('buy_company'); ?></label>
-                            <input type="text" name="buy_company" class="le-input" >
+                            <input type="text" name="buy_company" class="le-input" value="<?php echo set_value('buy_company'); ?>" >
                         </div>
                     </div>
 
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-4">
                             <label>郵遞區號 / Zip* <?php echo form_error('buy_zip'); ?></label>
-                            <input type="text" name="buy_zip" class="le-input"  >
+                            <input type="text" name="buy_zip" class="le-input" value="<?php echo set_value('buy_zip'); ?>"  >
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <label>地址* <?php echo form_error('buy_address'); ?></label>
-                            <input type="text" name="buy_address" class="le-input" data-placeholder="地址" >
+                            <input type="text" name="buy_address" class="le-input" data-placeholder="" value="<?php echo set_value('buy_address'); ?>" >
                         </div>
                     </div>
                 </div>
@@ -47,37 +47,37 @@
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-6">
                             <label>姓氏* <?php echo form_error('receive_lastname'); ?></label>
-                            <input type="name" name="receive_lastname" class="le-input" >
+                            <input type="name" name="receive_lastname" class="le-input" value="<?php echo set_value('receive_lastname'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-6">
                             <label>名子* <?php echo form_error('receive_firstname'); ?></label>
-                            <input type="name" name="receive_firstname" class="le-input" >
+                            <input type="name" name="receive_firstname" class="le-input" value="<?php echo set_value('receive_firstname'); ?>" >
                         </div>
                     </div>
 
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-4">
                             <label>Email 信箱* <?php echo form_error('receive_email'); ?></label>
-                            <input type="email" name="receive_email" class="le-input" >
+                            <input type="email" name="receive_email" class="le-input" value="<?php echo set_value('receive_email'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <label>聯絡電話* <?php echo form_error('receive_contact'); ?></label>
-                            <input type="text" name="receive_contact" class="le-input" >
+                            <input type="text" name="receive_contact" class="le-input" value="<?php echo set_value('receive_contact'); ?>" >
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <label>公司名稱 <?php echo form_error('receive_company'); ?></label>
-                            <input type="text" name="receive_company" class="le-input" >
+                            <input type="text" name="receive_company" class="le-input" value="<?php echo set_value('receive_company'); ?>" >
                         </div>
                     </div>
 
                     <div class="row field-row">
                         <div class="col-xs-12 col-sm-4">
                             <label>郵遞區號 / Zip* <?php echo form_error('receive_zip'); ?></label>
-                            <input type="text" name="receive_zip" class="le-input"  >
+                            <input type="text" name="receive_zip" class="le-input" value="<?php echo set_value('receive_zip'); ?>"  >
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <label>收件人地址* <?php echo form_error('receive_address'); ?></label>
-                            <input type="text" name="receive_address" class="le-input" data-placeholder="地址" >
+                            <input type="text" name="receive_address" class="le-input" data-placeholder="" value="<?php echo set_value('receive_address'); ?>" >
                         </div>
                     </div>
                 </section>

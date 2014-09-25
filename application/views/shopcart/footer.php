@@ -277,7 +277,7 @@
                             <li><a id="search_bottom" href="#search">尋找商品</a></li>
                             <li><?php echo anchor('shopcart/contact','關於我們');?></li>
                             <li><a href="category-grid.html">退貨/退款/換貨程序說明</a></li>
-                            <li><a href="category-grid.html">FAQ常見說明</a></li>
+                            <li><?php echo anchor('shopcart/faq','FAQ常見說明');?></li>
                             <li><a href="category-grid.html">產品支援</a></li>
                             <li><a href="category-grid.html">額外提供服務</a></li>
                         </ul>
@@ -290,8 +290,8 @@
                         <ul>
                             <li><a href="category-grid.html">我的帳號</a></li>
                             <li><a href="category-grid.html">網路訂單/配送進度查詢</a></li>
-                            <li><a href="category-grid.html">喜歡列表</a></li>
-                            <li><a href="category-grid.html">比較烈表</a></li>
+                            <li><?php echo anchor('shopcart/favor','追蹤清單');?></li>
+                            <li><?php echo anchor('shopcart/compare','比較清單');?></li>
                         </ul>
                     </div>
                 </div>

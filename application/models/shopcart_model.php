@@ -19,6 +19,34 @@ class Shopcart_model extends CI_Model {
     return $query;
   }
 
+  public function insert_newsletter($email)
+  {
+    //判斷有無重複的email，有的話則不新增。
+    $query = $this->db->select('email')->get('newsletter')->result();
+    foreach($query as $query) {
+      if($query->email == $email) {
+        $check = false;
+        break;
+      }
+      else {
+        $check = true;
+      }
+    }
+
+    if($check) {
+      $data = array(
+        'email' => $email,
+        'date' => date('Y-m-d H:i:s'),
+      );
+      $this->db->insert('newsletter',$data);
+    }
+  }
+
+  public function delete_newsletter($email)
+  {
+
+  }
+
   public function add_cart()
   {
 

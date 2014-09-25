@@ -14,6 +14,30 @@ class Shopcart extends CI_Controller {
     $this->compare = new Udp_cart('compare');
   }
 
+  public function captcha()
+  {
+    $this->load->helper('captcha');
+    $random_number = rand(10000,99999);
+    $vals = array(
+      'word' => $random_number,
+      'img_path' => './images/captcha/',
+      'img_url' => base_url() . '/images/captcha/',
+      'font_path' => base_url('assets/fonts/notosans/NotoSansHant-Regular.otf'),
+      'img_width' => '100',
+      'img_height' => '30',
+      'expiration' => 7200
+    );
+
+    return $vals;
+  }
+
+  public function test()
+  {
+    $this->load->helper('captcha');
+    $captcha = create_captcha($this->captcha());
+    echo print_r($captcha);
+  }
+
   public function send_email()
   {
     set_time_limit(0);
@@ -68,6 +92,19 @@ class Shopcart extends CI_Controller {
       ),
       'contain_view' => array(
         'shopcart/category','shopcart/footer'
+      ),
+    );
+    $this->load->view('template',$data);
+  }
+
+  public function favor()
+  {
+    $data = array(
+      'view' => array(
+        'shopcart/top_bar','shopcart/header'
+      ),
+      'contain_view' => array(
+        'shopcart/favor','shopcart/footer'
       ),
     );
     $this->load->view('template',$data);
@@ -153,7 +190,6 @@ class Shopcart extends CI_Controller {
 
   public function checkout()
   {
-    print_r($_POST);
     $data = array(
       'view' => array(
         'shopcart/top_bar','shopcart/header'
@@ -199,7 +235,7 @@ class Shopcart extends CI_Controller {
       $this->load->view('template',$data);
     }
     else {
-
+      // 通過驗證執行新增的動作
     }
   }
 
@@ -211,6 +247,12 @@ class Shopcart extends CI_Controller {
     }
   }
 
+  /*
+  * function add_cart
+  * function add_favor
+  * function add_compare
+  * 三個function 都要記錄下產品的所有資訊，好
+  */
   public function add_cart()
   {
     $product_id = $this->input->post('product_id');
@@ -228,8 +270,6 @@ class Shopcart extends CI_Controller {
           $cart = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
           $this->cart->insert($cart);
           break;
-        }
-        else {
         }
       }
     }
@@ -282,10 +322,27 @@ class Shopcart extends CI_Controller {
   public function add_favor()
   {
     $product_id = $this->input->post('product_id');
+    $qty = $this->input->post('qty');
     //$product = $this->shopcart_model->get_product($product_id)->result();
 
-    $favor = array("id" => rand(1,10),"qty" => 1,"name" => "shoes","price" => "10");
-    $this->favor->insert($favor);
+    if(empty($qty)) {
+      $qty = 1;
+    }
+
+    $favor = $this->favor->get_content();
+    if(!empty($favor)) {
+      foreach($favor as $favor) {
+        if($favor['id'] != $product_id) {
+          $favor = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+          $this->favor->insert($favor);
+          break;
+        }
+      }
+    }
+    else {
+      $favor = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+      $this->favor->insert($favor);
+    }
 
     echo anchor('shopcart/favor','<i class="fa fa-heart"></i>喜歡商品<span class="value">(' . $this->favor->total_articles() . ')</span>');
   }
@@ -293,12 +350,41 @@ class Shopcart extends CI_Controller {
   public function add_compare()
   {
     $product_id = $this->input->post('product_id');
+    $qty = $this->input->post('qty');
     //$product = $this->shopcart_model->get_product($product_id)->result();
 
-    $compare = array("id" => rand(1,10),"qty" => 1,"name" => "shoes","price" => "10");
-    $this->compare->insert($compare);
+    if(empty($qty)) {
+      $qty = 1;
+    }
+
+    $compare = $this->compare->get_content();
+    if(!empty($compare)) {
+      foreach($compare as $compare) {
+        if($compare['id'] != $product_id) {
+          $compare = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+          $this->compare->insert($compare);
+          break;
+        }
+        else {
+        }
+      }
+    }
+    else {
+      $compare = array("id" => $product_id,"qty" => $qty,"name" => "shoes","price" => "10");
+      $this->compare->insert($compare);
+    }
 
     echo anchor('shopcart/compare','<i class="fa fa-exchange"></i>比較商品<span class="value">(' . $this->compare->total_articles() . ')</span>');
+  }
+
+  public function add_newsletter()
+  {
+    $email = trim($this->input->post('email'));
+    if(!empty($email))
+    {
+      $this->shopcart_model->insert_newsletter($email);
+    }
+    redirect('');
   }
 }
 

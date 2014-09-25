@@ -45,7 +45,7 @@
 <div class="search-area">
     <?php echo form_open('shopcart/search',array('id'=>'search'));?>
         <div class="control-group">
-            <input name="search" class="search-field" placeholder="搜尋商品" />
+            <input id="search" name="search" class="search-field" placeholder="搜尋商品" />
             <ul class="categories-filter animate-dropdown">
                 <li class="dropdown">
 

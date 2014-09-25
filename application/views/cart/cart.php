@@ -5,17 +5,17 @@
             <?php echo form_open('shopcart/cart_update');?>
                 <?php foreach($this->cart->get_content() as $cart):?>
                 <div class="row no-margin cart-item">
-                    <div class="col-xs-12 col-sm-2 no-margin">
+                    <div class="col-xs-6 col-sm-2 no-margin">
                         <?php echo anchor('shopcart/product/' . $cart['id'],'<img class="lazy" alt="" src="http://placehold.it/73x73" />',array('class'=>'thumb-holder'));?>
                     </div>
 
-                    <div class="col-xs-12 col-sm-5 ">
+                    <div class="col-xs-6 col-sm-5 ">
                         <div class="title">
                             <?php echo anchor('shopcart/product/' . $cart['id'],$cart['name']);?>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-3 no-margin">
+                    <div class="col-xs-7 col-sm-3 no-margin">
                         <div class="quantity">
                             <div class="le-quantity">
                                 <a class="minus" href="#reduce"></a>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-2 no-margin">
+                    <div class="col-xs-5 col-sm-2 no-margin">
                         <div class="price">
                             $<?php echo $cart['price'];?>
                         </div>

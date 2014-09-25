@@ -24,7 +24,19 @@
 
         <!-- Demo Purpose Only. Should be removed in production -->
         <link rel="stylesheet" href="<?php echo base_url();?>assets/css/config.css">
-
+        <style type="text/css">
+        #gotop {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px 15px;
+            font-size: 20px;
+            background: #777;
+            color: white;
+            cursor: pointer;
+        }
+        </style>
         <link href="<?php echo base_url();?>assets/css/green.css" rel="alternate stylesheet" title="Green color">
         <link href="<?php echo base_url();?>assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
         <link href="<?php echo base_url();?>assets/css/red.css" rel="alternate stylesheet" title="Red color">
@@ -50,73 +62,78 @@
         <script src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
         <script>
         $(document).ready(function(){
-            $(document).on('click', 'a.add_cart', function(event){
-                var product_id = $(this).parents().siblings('input#product_id').val();
-                alert(product_id);
-                $.ajax({
-                    type : 'POST',
-                    url : '<?php echo site_url("shopcart/add_cart");?>',
-                    data : {
-                        <?php if($this->uri->segment(2) == 'product'):?>
-                        qty : $('#qty').val(),
-                        <?php endif;?>
-                        product_id : product_id
-                    },
-                    success : function(data){
-                        alert('成功新增到購物車');
-                        $('#top_cart').html(data);
-                    },
-                })
-            });
-            $(document).on('click', 'a.add_favor', function(event){
-                var product_id = $(this).parent().siblings('input#product_id').val();
-                alert(product_id);
-                $.ajax({
-                    type : 'POST',
-                    url : '<?php echo site_url("shopcart/add_favor");?>',
-                    data : {
-                        product_id : product_id
-                    },
-                    success : function(data){
-                        alert('成功新增到喜歡清單');
-                        $('#top_favor').html(data);
-                    },
-                })
-            });
-            $(document).on('click', 'a.add_compare', function(event){
-                var product_id = $(this).parent().siblings('input#product_id').val();
-                alert(product_id);
-                $.ajax({
-                    type : 'POST',
-                    url : '<?php echo site_url("shopcart/add_compare");?>',
-                    data : {
-                        product_id : product_id
-                    },
-                    success : function(data){
-                        alert('成功新增到比較清單');
-                        $('#top_compare').html(data);
-                    },
-                })
-            });
-
-            $(document).on('click', '.close-btn', function(event){
-                var product_id = $(this).siblings('.destroy_cart').val();
-                if(confirm("確定要刪除這筆商品？")) {
-                    $.ajax({
-                        type : 'POST',
-                        url : '<?php echo site_url("shopcart/destroy_cart");?>',
-                        data : {
-                            product_id : product_id
-                        },
-                        success : function(data){
-                            $('#top_cart').html(data);
-                            <?php if($this->uri->segment(2) == 'cart'):?>
-                            location.reload();
-                            <?php endif;?>
-                        },
-                    });
-                }
+          $(document).on('click', 'a.add_cart', function(event){
+            var product_id = $(this).parents().siblings('input#product_id').val();
+            var dom = $(this);
+            alert(product_id);
+            $.ajax({
+              type : 'POST',
+              url : '<?php echo site_url("shopcart/add_cart");?>',
+              data : {
+                <?php if($this->uri->segment(2) == 'product'):?>
+                qty : $('#qty').val(),
+                <?php endif;?>
+                product_id : product_id
+              },
+              success : function(data){
+                alert('成功新增到購物車');
+                dom.addClass('disabled');
+                dom.removeClass('add_cart');
+                $('#top_cart').html(data);
+              },
             })
+          });
+
+          $(document).on('click', 'a.add_favor', function(event){
+            var product_id = $(this).parents().siblings('input#product_id').val();
+            alert(product_id);
+            $.ajax({
+              type : 'POST',
+              url : '<?php echo site_url("shopcart/add_favor");?>',
+              data : {
+                product_id : product_id
+              },
+              success : function(data){
+                alert('成功新增到喜歡清單');
+                $('#top_favor').html(data);
+              },
+            })
+          });
+
+          $(document).on('click', 'a.add_compare', function(event){
+            var product_id = $(this).parents().siblings('input#product_id').val();
+            alert(product_id);
+            $.ajax({
+              type : 'POST',
+              url : '<?php echo site_url("shopcart/add_compare");?>',
+              data : {
+                product_id : product_id
+              },
+              success : function(data){
+                alert('成功新增到比較清單');
+                $('#top_compare').html(data);
+              },
+            })
+          });
+
+          $(document).on('click', '.close-btn', function(event){
+            var product_id = $(this).siblings('.destroy_cart').val();
+            if(confirm("確定要刪除這筆商品？")) {
+              $.ajax({
+                type : 'POST',
+                url : '<?php echo site_url("shopcart/destroy_cart");?>',
+                data : {
+                  product_id : product_id
+                },
+                success : function(data){
+                  $('#top_cart').html(data);
+                  <?php if($this->uri->segment(2) == 'cart'):?>
+                  location.reload();
+                  <?php endif;?>
+                },
+              });
+            }
+          });
         })
         </script>
         <?php if($this->uri->segment(2) == 'index' || $this->uri->segment(2) == ''):?>
@@ -265,9 +282,32 @@
       });
       </script>
       <?php endif;?>
+      <script type="text/javascript">
+      $(function(){
+        $("#gotop").click(function(){
+          jQuery("html,body").animate({
+            scrollTop:0
+          },1000);
+        });
+        $("#search_bottom").click(function(){
+          jQuery("html,body").animate({
+            scrollTop:0
+          },1000);
+          $("#search").trigger("focus");
+        });
+        $(window).scroll(function() {
+          if ( $(this).scrollTop() > 300){
+            $('#gotop').fadeIn("fast");
+          } else {
+            $('#gotop').stop().fadeOut("fast");
+          }
+        });
+      });
+      </script>
     </head>
 <body>
   <div class="wrapper">
+    <a href="javascript:undefined" id="gotop" title="回頁首">˄</a>
     <?php
       foreach($view as $view):
         $this->load->view($view);

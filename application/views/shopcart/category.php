@@ -8,7 +8,7 @@
 <div class="widget">
     <h1>條件篩選</h1>
     <div class="body bordered">
-        <?php echo form_open('shopcart/search',array('id'=>'select_range'));?>
+        <?php echo form_open('shopcart/search',array('id'=>'select_range','method'=>'get'));?>
         <div class="category-filter">
             <h2>品牌</h2>
             <hr>
@@ -194,7 +194,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -250,7 +250,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -306,7 +306,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -333,7 +333,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -360,7 +360,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -390,7 +390,7 @@
                                     <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                 </div>
                                 <div class="wish-compare">
-                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                     <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較清單</a>
                                 </div>
                             </div>
@@ -451,8 +451,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -481,8 +481,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -510,8 +510,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -541,8 +541,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -571,8 +571,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -601,8 +601,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -630,8 +630,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -661,8 +661,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -690,8 +690,8 @@
                                         <a href="javascript:undefined" class="le-button add_cart">加入購物車</a>
                                     </div>
                                     <div class="wish-compare">
-                                        <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.product-item -->
@@ -747,7 +747,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
                                     </div>
                                     <div class="addto-compare">
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.body-holder -->
@@ -756,8 +756,8 @@
                                     <div class="price-current">$1199.00</div>
                                     <div class="price-prev">$1399.00</div>
                                     <div class="availability"><label>供應狀況:</label><span class="available">  有存貨</span></div>
-                                    <a class="le-button" href="javascript:undefined">加入購物車</a>
-                                    <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="le-button add_cart" href="javascript:undefined">加入購物車</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                 </div>
                             </div><!-- /.price-area -->
                         </div><!-- /.row -->
@@ -787,7 +787,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
                                     </div>
                                     <div class="addto-compare">
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.body-holder -->
@@ -797,7 +797,7 @@
                                     <div class="price-prev">$1399.00</div>
                                     <div class="availability"><label>供應狀況:</label><span class="not-available">已售完</span></div>
                                     <a class="le-button disabled" href="javascript:undefined">加入購物車</a>
-                                    <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                 </div>
                             </div><!-- /.price-area -->
                         </div><!-- /.row -->
@@ -827,7 +827,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt. </p>
                                     </div>
                                     <div class="addto-compare">
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.body-holder -->
@@ -836,8 +836,8 @@
                                     <div class="price-current">$1199.00</div>
                                     <div class="price-prev">$1399.00</div>
                                     <div class="availability"><label>供應狀況:</label><span class="available">有存貨</span></div>
-                                    <a class="le-button" href="javascript:undefined">加入購物車</a>
-                                    <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="le-button add_cart" href="javascript:undefined">加入購物車</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                 </div>
                             </div><!-- /.price-area -->
                         </div><!-- /.row -->
@@ -862,7 +862,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt. </p>
                                     </div>
                                     <div class="addto-compare">
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.body-holder -->
@@ -871,8 +871,8 @@
                                     <div class="price-current">$1199.00</div>
                                     <div class="price-prev">$1399.00</div>
                                     <div class="availability"><label>供應狀況:</label><span class="available">  有存貨</span></div>
-                                    <a class="le-button" href="javascript:undefined">加入購物車</a>
-                                    <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="le-button add_cart" href="javascript:undefined">加入購物車</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                 </div>
                             </div><!-- /.price-area -->
                         </div><!-- /.row -->
@@ -898,7 +898,7 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis euismod erat sit amet porta. Etiam venenatis ac diam ac tristique. Morbi accumsan consectetur odio ut tincidunt.</p>
                                     </div>
                                     <div class="addto-compare">
-                                        <a class="btn-add-to-compare add_compare add_compare" href="javascript:undefined">加入比較</a>
+                                        <a class="btn-add-to-compare add_compare" href="javascript:undefined">加入比較</a>
                                     </div>
                                 </div>
                             </div><!-- /.body-holder -->
@@ -907,8 +907,8 @@
                                     <div class="price-current">$1199.00</div>
                                     <div class="price-prev">$1399.00</div>
                                     <div class="availability"><label>供應狀況:</label><span class="available">  有存貨</span></div>
-                                    <a class="le-button" href="javascript:undefined">加入購物車</a>
-                                    <a class="btn-add-to-wishlist add_favor add_favor" href="javascript:undefined">加入喜歡清單</a>
+                                    <a class="le-button add_cart" href="javascript:undefined">加入購物車</a>
+                                    <a class="btn-add-to-wishlist add_favor" href="javascript:undefined">加入追蹤列表</a>
                                 </div>
                             </div><!-- /.price-area -->
                         </div><!-- /.row -->

@@ -4,7 +4,7 @@
     <section class="section">
       <div class="page-header">
         <h2 class="page-title">常　見　問　題</h2>
-        <p class="page-subtitle">Last Updated on July 14, 2014</p>
+        <p class="page-subtitle">最後更新 July 14, 2014</p>
       </div>
       <div id="questions" class="panel-group panel-group-faq">
         <div class="panel panel-faq">
